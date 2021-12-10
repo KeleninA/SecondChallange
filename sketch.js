@@ -28,6 +28,9 @@ function mousePressed() {
 
 function draw() {
   background(0);
+  let a = createA('https://kelenina.github.io/ThirdChallange/', '🍀', '_blank');
+  a.position(200, 200);
+  
   for (let i = 0; i < bubbles.length; i++) {
     //bubbles[i].move();
     bubbles[i].display();
