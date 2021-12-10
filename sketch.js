@@ -3,7 +3,7 @@ let bubbles = [];
 let rand4;
 let rand5;
 let rand6;
-
+let count = 0;
 function setup() {
   createCanvas(600, 400);
   for (let i = 0; i < 1000; i++) {
@@ -19,17 +19,23 @@ function setup() {
 }
 
 function mousePressed() {
+  let a = createA('https://kelenina.github.io/ThirdChalange/', '🍀', '_blank');
+  a.position(200, 300);
+  a.hide();
   for (var i = bubbles.length - 1; i >= 0; i--) {
     if (bubbles[i].mouseOver()) {
       bubbles.splice(i, 1);
     }
   }
+  if(count >= 50) {
+    a.show();
+  }
+  count++;
 }
 
 function draw() {
   background(0);
-  let a = createA('https://kelenina.github.io/ThirdChallange/', '🍀', '_blank');
-  a.position(200, 200);
+  
   
   for (let i = 0; i < bubbles.length; i++) {
     //bubbles[i].move();
